@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --g9:#052e16; --g8:#0a5c2e; --g7:#0a6640; --g6:#0d7a4a;
+  --g5:#16a34a; --g4:#22c55e; --g3:#4ade80; --g1:#dcfce7; --g0:#f0fdf4;
+  --gold:#c9a84c; --gold-l:#f0d98a;
+  --ink:#0f1a0f; --muted:#475569; --dim:#94a3b8;
+  --surface:#f8fafc; --card:#ffffff; --border:#e2e8f0;
+  --red:#ef4444; --amber:#f59e0b; --blue:#3b82f6;
+  --sidebar-w: 240px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4,h5,h6{font-family:'Sora',sans-serif;}
+a{text-decoration:none;color:inherit;}
+button{font-family:'DM Sans',sans-serif;}
+input,select,textarea{font-family:'DM Sans',sans-serif;}
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--g3);border-radius:99px;}
