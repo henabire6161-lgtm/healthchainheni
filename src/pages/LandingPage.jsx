@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Shield, Activity, Users, Lock, ChevronRight, CheckCircle,
          Globe, Database, Zap, ArrowRight, Fingerprint, HeartPulse } from 'lucide-react'
+import AIAssistantSection from '../components/AIAssistantSection'
 
 const STATS = [
   { value:'130M+', label:'Citizens Connected' },
@@ -201,6 +202,9 @@ export default function LandingPage({ go }) {
           </div>
         </div>
       </section>
+
+      {/* ── AI ASSISTANT ── */}
+      <AIAssistantSection />
 
       {/* ── HOW IT WORKS ── */}
       <section className="how-it-works" style={{ padding:'6rem 2rem', background:'#052e16', position:'relative', overflow:'hidden' }}>
