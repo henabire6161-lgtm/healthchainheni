@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Shield, Activity, Users, Lock, ChevronRight, CheckCircle,
-         Globe, Database, Zap, ArrowRight, Fingerprint, HeartPulse } from 'lucide-react'
-
-const STATS = [
-  { value:'130M+', label:'Citizens Connected' },
-  { value:'21,581', label:'Health Facilities' },
-  { value:'100%', label:'Data Sovereignty' },
-  { value:'Real-Time', label:'Disease Surveillance' },
-]
+         Globe, Database, Zap, Fingerprint, HeartPulse } from 'lucide-react'
+import Navbar from '../components/Navbar'
+import Hero from '../components/Hero'
+import ChallengeSection from '../components/ChallengeSection'
+import EcosystemSection from '../components/EcosystemSection'
+import PlatformExplorer from '../components/PlatformExplorer'
+import { PLATFORMS } from '../data/platforms'
 
 const ROLES = [
   { id:'patient', icon:Users, title:'Patient', color:'#16a34a', bg:'#f0fdf4',
@@ -34,126 +33,24 @@ const FEATURES = [
 ]
 
 export default function LandingPage({ go }) {
-  const [scrolled, setScrolled] = useState(false)
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', h)
-    return () => window.removeEventListener('scroll', h)
-  }, [])
-
-  const S = (selector) => document.querySelector(selector)?.scrollIntoView({ behavior:'smooth' })
+  const [explorerPlatformId, setExplorerPlatformId] = useState(PLATFORMS[0].id)
+  const scrollToContact = () => document.getElementById('contact')?.scrollIntoView({ behavior:'smooth' })
+  const scrollToPlatform = () => document.getElementById('platform')?.scrollIntoView({ behavior:'smooth' })
+  const scrollToExplorer = (platformId) => {
+    setExplorerPlatformId(platformId)
+    document.getElementById('platform-explorer')?.scrollIntoView({ behavior:'smooth' })
+  }
 
   return (
     <div style={{ minHeight:'100vh', background:'white' }}>
-      {/* ── NAV ── */}
-      <nav style={{
-        position:'fixed', top:0, left:0, right:0, zIndex:200,
-        height:66, display:'flex', alignItems:'center', justifyContent:'space-between',
-        padding:'0 3rem',
-        background: scrolled ? 'rgba(255,255,255,0.96)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(16px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(0,0,0,0.07)' : 'none',
-        transition:'all 0.3s',
-      }}>
-        <div style={{ display:'flex', alignItems:'center', gap:10, cursor:'pointer' }}>
-          <div style={{ width:36, height:36, borderRadius:10, background:'linear-gradient(135deg,#0a6640,#22c55e)', display:'flex', alignItems:'center', justifyContent:'center' }}>
-            <Shield size={18} color="white"/>
-          </div>
-          <span style={{ fontFamily:'Sora', fontWeight:800, fontSize:'1.05rem', color: scrolled?'#0a5c2e':'white' }}>
-            HealthChain<span style={{ color:'#4ade80' }}>ET</span>
-          </span>
-        </div>
-        <div style={{ display:'flex', alignItems:'center', gap:'2rem' }}>
-          {['Portals','How It Works','Impact'].map(l => (
-            <span key={l} onClick={() => S('.'+l.toLowerCase().replace(/ /g,'-'))} style={{
-              fontSize:'0.875rem', fontWeight:500, cursor:'pointer', transition:'color 0.2s',
-              color: scrolled ? '#475569' : 'rgba(255,255,255,0.8)'
-            }}>{l}</span>
-          ))}
-          <button onClick={() => go('login')} style={{
-            padding:'0.5rem 1.25rem', borderRadius:'99px', border:'none', cursor:'pointer',
-            background:'linear-gradient(135deg,#0a6640,#22c55e)',
-            color:'white', fontFamily:'Sora', fontWeight:700, fontSize:'0.875rem',
-            boxShadow:'0 2px 14px rgba(16,163,74,0.35)', transition:'all 0.2s'
-          }}>Sign In →</button>
-        </div>
-      </nav>
-
-      {/* ── HERO ── */}
-      <section style={{
-        minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center',
-        padding:'8rem 2rem 5rem', position:'relative', overflow:'hidden',
-        background:'linear-gradient(155deg,#052e16 0%,#0a5c2e 45%,#0a6640 100%)',
-      }}>
-        <div style={{ position:'absolute', inset:0, opacity:0.04,
-          backgroundImage:'linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px)',
-          backgroundSize:'48px 48px' }}/>
-        <div style={{ position:'absolute', top:'12%', right:'8%', width:500, height:500, borderRadius:'50%', background:'rgba(34,197,94,0.1)', filter:'blur(80px)' }}/>
-        <div style={{ position:'absolute', bottom:'8%', left:'5%', width:360, height:360, borderRadius:'50%', background:'rgba(201,168,76,0.07)', filter:'blur(60px)' }}/>
-
-        <div style={{ maxWidth:880, textAlign:'center', position:'relative', zIndex:2 }}>
-          <div style={{
-            display:'inline-flex', alignItems:'center', gap:8,
-            background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.18)',
-            borderRadius:'99px', padding:'0.35rem 1rem', marginBottom:'2rem',
-          }}>
-            <div style={{ width:6, height:6, borderRadius:'50%', background:'#4ade80', animation:'pulse 2s infinite' }}/>
-            <span style={{ fontSize:'0.72rem', color:'#4ade80', fontWeight:700, letterSpacing:'0.07em' }}>
-              FAYDA INTEGRATED · DIGITAL ETHIOPIA 2030
-            </span>
-          </div>
-
-          <h1 style={{
-            fontFamily:'Sora', fontWeight:800, lineHeight:1.05, letterSpacing:'-0.03em',
-            fontSize:'clamp(2.8rem,6.5vw,5rem)', color:'white', marginBottom:'1.5rem'
-          }}>
-            One Patient.<br/>
-            <span style={{ color:'#4ade80' }}>One Record.</span><br/>
-            <span style={{ color:'#f0d98a' }}>One Nation.</span>
-          </h1>
-
-          <p style={{ fontSize:'1.1rem', color:'rgba(255,255,255,0.65)', maxWidth:560, margin:'0 auto 2.5rem', lineHeight:1.75, fontWeight:300 }}>
-            Ethiopia's national blockchain health data platform — connecting every patient, doctor, hospital, and health authority through one tamper-proof, government-owned system.
-          </p>
-
-          <div style={{ display:'flex', gap:'1rem', justifyContent:'center', flexWrap:'wrap', marginBottom:'4.5rem' }}>
-            <button onClick={() => go('login')} style={{
-              display:'flex', alignItems:'center', gap:8,
-              padding:'0.9rem 2rem', borderRadius:'99px', border:'none', cursor:'pointer',
-              background:'linear-gradient(135deg,#4ade80,#16a34a)',
-              color:'white', fontFamily:'Sora', fontWeight:700, fontSize:'0.95rem',
-              boxShadow:'0 8px 32px rgba(34,197,94,0.4)', transition:'all 0.2s'
-            }}>Access Your Portal <ArrowRight size={17}/></button>
-            <button onClick={() => S('.how-it-works')} style={{
-              display:'flex', alignItems:'center', gap:8,
-              padding:'0.9rem 2rem', borderRadius:'99px', cursor:'pointer',
-              border:'1px solid rgba(255,255,255,0.25)',
-              background:'rgba(255,255,255,0.07)', backdropFilter:'blur(8px)',
-              color:'white', fontFamily:'Sora', fontWeight:600, fontSize:'0.95rem', transition:'all 0.2s'
-            }}>See How It Works</button>
-          </div>
-
-          {/* Stats */}
-          <div style={{
-            display:'grid', gridTemplateColumns:'repeat(4,1fr)',
-            background:'rgba(255,255,255,0.06)', border:'1px solid rgba(255,255,255,0.12)',
-            borderRadius:18, overflow:'hidden',
-          }}>
-            {STATS.map((s,i) => (
-              <div key={i} style={{
-                padding:'1.5rem 1rem', textAlign:'center',
-                borderRight: i<3 ? '1px solid rgba(255,255,255,0.1)' : 'none'
-              }}>
-                <div style={{ fontFamily:'Sora', fontWeight:800, fontSize:'1.9rem', color:'#4ade80', lineHeight:1 }}>{s.value}</div>
-                <div style={{ fontSize:'0.72rem', color:'rgba(255,255,255,0.45)', marginTop:4, fontWeight:500 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Navbar onRequestDemo={scrollToContact} />
+      <Hero onExplore={scrollToPlatform} onRequestDemo={scrollToContact} />
+      <ChallengeSection />
+      <EcosystemSection onExploreFull={scrollToExplorer} />
+      <PlatformExplorer selectedId={explorerPlatformId} onSelectId={setExplorerPlatformId} />
 
       {/* ── PORTALS ── */}
-      <section className="portals" style={{ padding:'6rem 2rem', background:'#f8fafc' }}>
+      <section id="who-its-for" className="portals" style={{ padding:'6rem 2rem', background:'#f8fafc' }}>
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <div style={{ textAlign:'center', marginBottom:'3rem' }}>
             <span style={{ display:'inline-block', padding:'0.3rem 1rem', borderRadius:'99px', background:'#f0fdf4', color:'#0a6640', fontSize:'0.72rem', fontWeight:700, letterSpacing:'0.07em', marginBottom:'0.875rem' }}>WHO IS IT FOR</span>
@@ -203,7 +100,7 @@ export default function LandingPage({ go }) {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className="how-it-works" style={{ padding:'6rem 2rem', background:'#052e16', position:'relative', overflow:'hidden' }}>
+      <section id="roadmap" className="how-it-works" style={{ padding:'6rem 2rem', background:'#052e16', position:'relative', overflow:'hidden' }}>
         <div style={{ position:'absolute', inset:0, opacity:0.03, backgroundImage:'radial-gradient(circle,white 1px,transparent 1px)', backgroundSize:'40px 40px' }}/>
         <div style={{ maxWidth:1100, margin:'0 auto', position:'relative', zIndex:2 }}>
           <div style={{ marginBottom:'3rem' }}>
@@ -235,7 +132,7 @@ export default function LandingPage({ go }) {
       </section>
 
       {/* ── IMPACT ── */}
-      <section className="impact" style={{ padding:'6rem 2rem', background:'white' }}>
+      <section id="vision" className="impact" style={{ padding:'6rem 2rem', background:'white' }}>
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <div style={{ textAlign:'center', marginBottom:'3rem' }}>
             <span style={{ display:'inline-block', padding:'0.3rem 1rem', borderRadius:'99px', background:'#f0fdf4', color:'#0a6640', fontSize:'0.72rem', fontWeight:700, letterSpacing:'0.07em', marginBottom:'0.875rem' }}>NATIONAL IMPACT</span>
@@ -296,7 +193,7 @@ export default function LandingPage({ go }) {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding:'6rem 2rem', background:'linear-gradient(155deg,#052e16,#0a6640)', textAlign:'center', position:'relative', overflow:'hidden' }}>
+      <section id="contact" style={{ padding:'6rem 2rem', background:'linear-gradient(155deg,#052e16,#0a6640)', textAlign:'center', position:'relative', overflow:'hidden' }}>
         <div style={{ position:'absolute', inset:0, opacity:0.03, backgroundImage:'radial-gradient(circle,white 1px,transparent 1px)', backgroundSize:'40px 40px' }}/>
         <div style={{ maxWidth:580, margin:'0 auto', position:'relative', zIndex:2 }}>
           <h2 style={{ fontFamily:'Sora', fontWeight:800, fontSize:'clamp(1.8rem,4vw,2.8rem)', color:'white', letterSpacing:'-0.02em', marginBottom:'1rem' }}>
@@ -351,7 +248,6 @@ export default function LandingPage({ go }) {
           </div>
         </div>
       </footer>
-      <style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}`}</style>
     </div>
   )
 }
