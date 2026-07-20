@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import { Shield, Activity, Users, Lock, ChevronRight, CheckCircle,
          Globe, Database, Zap, Fingerprint, HeartPulse } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import ChallengeSection from '../components/ChallengeSection'
+import EcosystemSection from '../components/EcosystemSection'
+import PlatformExplorer from '../components/PlatformExplorer'
+import { PLATFORMS } from '../data/platforms'
 
 const ROLES = [
   { id:'patient', icon:Users, title:'Patient', color:'#16a34a', bg:'#f0fdf4',
@@ -29,17 +33,24 @@ const FEATURES = [
 ]
 
 export default function LandingPage({ go }) {
+  const [explorerPlatformId, setExplorerPlatformId] = useState(PLATFORMS[0].id)
   const scrollToContact = () => document.getElementById('contact')?.scrollIntoView({ behavior:'smooth' })
   const scrollToPlatform = () => document.getElementById('platform')?.scrollIntoView({ behavior:'smooth' })
+  const scrollToExplorer = (platformId) => {
+    setExplorerPlatformId(platformId)
+    document.getElementById('platform-explorer')?.scrollIntoView({ behavior:'smooth' })
+  }
 
   return (
     <div style={{ minHeight:'100vh', background:'white' }}>
       <Navbar onRequestDemo={scrollToContact} />
       <Hero onExplore={scrollToPlatform} onRequestDemo={scrollToContact} />
       <ChallengeSection />
+      <EcosystemSection onExploreFull={scrollToExplorer} />
+      <PlatformExplorer selectedId={explorerPlatformId} onSelectId={setExplorerPlatformId} />
 
       {/* ── PORTALS ── */}
-      <section id="platform" className="portals" style={{ padding:'6rem 2rem', background:'#f8fafc' }}>
+      <section id="who-its-for" className="portals" style={{ padding:'6rem 2rem', background:'#f8fafc' }}>
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <div style={{ textAlign:'center', marginBottom:'3rem' }}>
             <span style={{ display:'inline-block', padding:'0.3rem 1rem', borderRadius:'99px', background:'#f0fdf4', color:'#0a6640', fontSize:'0.72rem', fontWeight:700, letterSpacing:'0.07em', marginBottom:'0.875rem' }}>WHO IS IT FOR</span>
