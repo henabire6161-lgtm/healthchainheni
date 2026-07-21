@@ -1,4 +1,4 @@
-import { Shield, Linkedin, Github } from 'lucide-react'
+import { Shield } from 'lucide-react'
 
 const LINKS = [
   { label: 'Platform Overview', id: 'platform' },
@@ -59,23 +59,27 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="View source on GitHub"
                 style={{
-                  width: 36, height: 36, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', transition: 'background 0.2s',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  padding: '0.45rem 0.9rem', borderRadius: 10, fontSize: '0.75rem', fontWeight: 700,
+                  background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)',
+                  color: 'white', transition: 'background 0.2s',
                 }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'rgba(74,222,128,0.15)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)' }}
               >
-                <Github size={16} color="white" />
+                GitHub
               </a>
               <span
                 aria-disabled="true"
                 title="LinkedIn — coming soon"
                 style={{
-                  width: 36, height: 36, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', cursor: 'not-allowed',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  padding: '0.45rem 0.9rem', borderRadius: 10, fontSize: '0.75rem', fontWeight: 700,
+                  background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)',
+                  color: 'rgba(255,255,255,0.25)', cursor: 'not-allowed',
                 }}
               >
-                <Linkedin size={16} color="rgba(255,255,255,0.25)" />
+                LinkedIn
               </span>
             </div>
           </div>
