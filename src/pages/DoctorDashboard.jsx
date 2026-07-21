@@ -15,7 +15,7 @@ const NAV = [
 ]
 
 const PATIENTS = [
-  { name:'Fiker Ibrahim',   id:'ETH-4821-9034', age:38, sex:'M', condition:'Hypertension',   last:'12 May 2026', status:'green'  },
+  { name:'Henok Berhanu Kebede',   id:'ETH-4821-9034', age:38, sex:'M', condition:'Hypertension',   last:'12 May 2026', status:'green'  },
   { name:'Almaz Bekele',    id:'ETH-2293-6711', age:52, sex:'F', condition:'Type 2 Diabetes', last:'10 May 2026', status:'amber'  },
   { name:'Dawit Tesfaye',   id:'ETH-5531-8820', age:29, sex:'M', condition:'Asthma',          last:'08 May 2026', status:'green'  },
   { name:'Hana Gebremariam',id:'ETH-7748-1234', age:45, sex:'F', condition:'Hypothyroidism',  last:'06 May 2026', status:'green'  },
@@ -31,7 +31,7 @@ const LABS_PENDING = [
 ]
 
 const SCHEDULE = [
-  { time:'08:30', patient:'Fiker Ibrahim',    type:'Follow-up — Hypertension',    duration:'20 min', status:'done' },
+  { time:'08:30', patient:'Henok Berhanu Kebede',    type:'Follow-up — Hypertension',    duration:'20 min', status:'done' },
   { time:'09:00', patient:'Almaz Bekele',     type:'Diabetes Review',              duration:'30 min', status:'done' },
   { time:'09:45', patient:'Tigist Alemu',     type:'Lab Results Review',           duration:'20 min', status:'now'  },
   { time:'10:30', patient:'New Patient',      type:'Initial Consultation',         duration:'45 min', status:'next' },

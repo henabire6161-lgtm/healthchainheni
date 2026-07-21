@@ -48,9 +48,9 @@ export default function PatientDashboard({ go }) {
       <div>
         <div style={{ marginBottom:'1.5rem' }}>
           <div style={{ display:'flex', alignItems:'center', gap:12, padding:'1.25rem 1.5rem', background:'linear-gradient(135deg,#052e16,#0a6640)', borderRadius:16, color:'white', marginBottom:'1.5rem' }}>
-            <div style={{ width:52,height:52,borderRadius:'50%',background:'rgba(255,255,255,0.15)',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Sora',fontWeight:800,fontSize:'1.1rem',flexShrink:0 }}>FI</div>
+            <div style={{ width:52,height:52,borderRadius:'50%',background:'rgba(255,255,255,0.15)',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Sora',fontWeight:800,fontSize:'1.1rem',flexShrink:0 }}>HK</div>
             <div style={{ flex:1 }}>
-              <div style={{ fontFamily:'Sora',fontWeight:700,fontSize:'1.1rem' }}>Fiker Ibrahim</div>
+              <div style={{ fontFamily:'Sora',fontWeight:700,fontSize:'1.1rem' }}>Henok Berhanu Kebede</div>
               <div style={{ fontSize:'0.78rem',color:'rgba(255,255,255,0.55)',marginTop:2 }}>Fayda ID: ETH-4821-9034  ·  DOB: 14 Mar 1988  ·  Blood Type: A+</div>
             </div>
             <div style={{ display:'flex',alignItems:'center',gap:6,background:'rgba(74,222,128,0.15)',border:'1px solid rgba(74,222,128,0.3)',borderRadius:'99px',padding:'0.3rem 0.75rem' }}>
@@ -207,7 +207,7 @@ export default function PatientDashboard({ go }) {
             </div>
             <div style={{ background:'var(--surface)',borderRadius:12,padding:'1rem',textAlign:'left' }}>
               <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'0.75rem',fontSize:'0.83rem' }}>
-                {[['Name','Fiker Ibrahim'],['Blood Type','A+'],['Fayda ID','ETH-4821-9034'],['Allergies','Penicillin'],['Conditions','Hypertension'],['Emergency Contact','+251 912 345678']].map(([k,v])=>(
+                {[['Name','Henok Berhanu Kebede'],['Blood Type','A+'],['Fayda ID','ETH-4821-9034'],['Allergies','Penicillin'],['Conditions','Hypertension'],['Emergency Contact','+251 912 345678']].map(([k,v])=>(
                   <div key={k}><div style={{ fontSize:'0.68rem',color:'var(--dim)',fontWeight:600,letterSpacing:'0.04em' }}>{k.toUpperCase()}</div><div style={{ fontWeight:600,color:'var(--ink)',marginTop:2 }}>{v}</div></div>
                 ))}
               </div>
