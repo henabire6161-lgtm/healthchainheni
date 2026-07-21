@@ -11,6 +11,15 @@ import NPIPSection from '../components/NPIPSection'
 import MOHDashboardSection from '../components/MOHDashboardSection'
 import ActivityFeedSection from '../components/ActivityFeedSection'
 import TrustWorkflow from '../components/TrustWorkflow'
+import EnterpriseArchitecture from '../components/EnterpriseArchitecture'
+import InteroperabilityDiagram from '../components/InteroperabilityDiagram'
+import HyperledgerTrustSection from '../components/HyperledgerTrustSection'
+import SecuritySection from '../components/SecuritySection'
+import TechnologyStackSection from '../components/TechnologyStackSection'
+import RoadmapSection from '../components/RoadmapSection'
+import PartnershipSection from '../components/PartnershipSection'
+import FinalCTASection from '../components/FinalCTASection'
+import Footer from '../components/Footer'
 import { PLATFORMS } from '../data/platforms'
 
 const ROLES = [
@@ -45,6 +54,7 @@ export default function LandingPage({ go }) {
     setExplorerPlatformId(platformId)
     document.getElementById('platform-explorer')?.scrollIntoView({ behavior:'smooth' })
   }
+  const scrollToArchitecture = () => document.getElementById('architecture')?.scrollIntoView({ behavior:'smooth' })
 
   return (
     <div style={{ minHeight:'100vh', background:'white' }}>
@@ -110,7 +120,7 @@ export default function LandingPage({ go }) {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section id="roadmap" className="how-it-works" style={{ padding:'6rem 2rem', background:'#052e16', position:'relative', overflow:'hidden' }}>
+      <section id="how-it-works" className="how-it-works" style={{ padding:'6rem 2rem', background:'#052e16', position:'relative', overflow:'hidden' }}>
         <div style={{ position:'absolute', inset:0, opacity:0.03, backgroundImage:'radial-gradient(circle,white 1px,transparent 1px)', backgroundSize:'40px 40px' }}/>
         <div style={{ maxWidth:1100, margin:'0 auto', position:'relative', zIndex:2 }}>
           <div style={{ marginBottom:'3rem' }}>
@@ -202,62 +212,15 @@ export default function LandingPage({ go }) {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section id="contact" style={{ padding:'6rem 2rem', background:'linear-gradient(155deg,#052e16,#0a6640)', textAlign:'center', position:'relative', overflow:'hidden' }}>
-        <div style={{ position:'absolute', inset:0, opacity:0.03, backgroundImage:'radial-gradient(circle,white 1px,transparent 1px)', backgroundSize:'40px 40px' }}/>
-        <div style={{ maxWidth:580, margin:'0 auto', position:'relative', zIndex:2 }}>
-          <h2 style={{ fontFamily:'Sora', fontWeight:800, fontSize:'clamp(1.8rem,4vw,2.8rem)', color:'white', letterSpacing:'-0.02em', marginBottom:'1rem' }}>
-            Ethiopia's health data<br/>future starts now.
-          </h2>
-          <p style={{ color:'rgba(255,255,255,0.6)', fontSize:'1rem', marginBottom:'2.5rem', lineHeight:1.75 }}>
-            Join 130 million Ethiopians on one blockchain-verified, Fayda-integrated health platform.
-          </p>
-          <button onClick={() => go('login')} style={{
-            display:'inline-flex', alignItems:'center', gap:8,
-            padding:'1rem 2.5rem', borderRadius:'99px', border:'none', cursor:'pointer',
-            background:'white', color:'#052e16',
-            fontFamily:'Sora', fontWeight:700, fontSize:'1rem',
-            boxShadow:'0 8px 32px rgba(0,0,0,0.2)', transition:'all 0.2s'
-          }}>Access the Platform →</button>
-        </div>
-      </section>
-
-      {/* ── FOOTER ── */}
-      <footer style={{ background:'#052e16', padding:'3rem 2rem 1.75rem', borderTop:'1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth:1100, margin:'0 auto' }}>
-          <div style={{ display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:'2rem', marginBottom:'2.5rem' }}>
-            <div>
-              <div style={{ display:'flex', alignItems:'center', gap:9, marginBottom:'0.625rem' }}>
-                <div style={{ width:32,height:32,borderRadius:9,background:'rgba(255,255,255,0.1)',display:'flex',alignItems:'center',justifyContent:'center' }}><Shield size={16} color="white"/></div>
-                <span style={{ fontFamily:'Sora', fontWeight:800, fontSize:'0.95rem', color:'#4ade80' }}>HealthChainET</span>
-              </div>
-              <p style={{ fontSize:'0.8rem', color:'rgba(255,255,255,0.3)', maxWidth:260, lineHeight:1.65 }}>
-                Ethiopia's national blockchain health data platform. One patient. One record. One nation.
-              </p>
-            </div>
-            <div style={{ display:'flex', gap:'4rem' }}>
-              {[
-                { title:'PORTALS', links:['Patient Portal','Doctor / Clinician','Hospital / Facility','Government / MOH'] },
-                { title:'PLATFORM', links:['How It Works','Fayda Integration','Security & Privacy','Digital Ethiopia 2030'] },
-              ].map(col => (
-                <div key={col.title}>
-                  <h5 style={{ fontFamily:'Sora', fontSize:'0.7rem', fontWeight:700, color:'rgba(255,255,255,0.4)', letterSpacing:'0.07em', marginBottom:'0.875rem' }}>{col.title}</h5>
-                  {col.links.map(l => <a key={l} href="#" style={{ display:'block', fontSize:'0.8rem', color:'rgba(255,255,255,0.3)', marginBottom:'0.5rem', transition:'color 0.2s' }}
-                    onMouseEnter={e=>e.target.style.color='#4ade80'} onMouseLeave={e=>e.target.style.color='rgba(255,255,255,0.3)'}>{l}</a>)}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div style={{ borderTop:'1px solid rgba(255,255,255,0.06)', paddingTop:'1.5rem', display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:'0.5rem' }}>
-            <p style={{ fontSize:'0.75rem', color:'rgba(255,255,255,0.22)' }}>© 2026 HealthChain Ethiopia · Federal Ministry of Health</p>
-            <div style={{ display:'flex', gap:'0.75rem' }}>
-              {['Fayda Integrated','Blockchain Verified','Government Owned'].map(t => (
-                <span key={t} style={{ padding:'0.2rem 0.6rem', background:'rgba(255,255,255,0.05)', borderRadius:'99px', fontSize:'0.68rem', color:'rgba(255,255,255,0.28)' }}>{t}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </footer>
+      <EnterpriseArchitecture />
+      <InteroperabilityDiagram />
+      <HyperledgerTrustSection />
+      <SecuritySection />
+      <TechnologyStackSection />
+      <RoadmapSection />
+      <PartnershipSection />
+      <FinalCTASection onRequestDemo={scrollToContact} onExploreVision={scrollToArchitecture} />
+      <Footer />
     </div>
   )
 }
