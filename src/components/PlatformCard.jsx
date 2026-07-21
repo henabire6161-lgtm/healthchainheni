@@ -34,8 +34,6 @@ export default function PlatformCard({ platform, onSelect, delay = 0, style, com
         e.currentTarget.style.boxShadow = 'none'
         e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
       }}
-      onFocus={e => { e.currentTarget.style.outline = '2px solid #4ade80'; e.currentTarget.style.outlineOffset = '2px' }}
-      onBlur={e => { e.currentTarget.style.outline = 'none' }}
     >
       <div style={{
         width: compact ? 40 : 40, height: compact ? 40 : 40, borderRadius: 11, flexShrink: 0,
@@ -49,7 +47,7 @@ export default function PlatformCard({ platform, onSelect, delay = 0, style, com
         <div style={{ fontFamily: 'Sora', fontWeight: 700, fontSize: '0.85rem', color: 'white', marginBottom: 4, lineHeight: 1.3 }}>
           {title}
         </div>
-        <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
+        <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.5 }}>
           {shortDesc}
         </div>
       </div>

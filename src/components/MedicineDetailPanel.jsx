@@ -24,7 +24,7 @@ export default function MedicineDetailPanel({ medicine, onClose }) {
                 <h3 id="medicine-panel-title" style={{ fontFamily: 'Sora', fontWeight: 800, fontSize: '1.1rem', color: 'white', lineHeight: 1.3 }}>
                   {medicine.name}
                 </h3>
-                <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)' }}>{medicine.category}</span>
+                <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.62)' }}>{medicine.category}</span>
               </div>
             </div>
             <button
@@ -79,14 +79,14 @@ export default function MedicineDetailPanel({ medicine, onClose }) {
             <div style={{ padding: '0.9rem 1rem', borderRadius: 12, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
                 <Tag size={13} color="#4ade80" />
-                <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.45)', fontWeight: 600 }}>ESTIMATED PRICE</span>
+                <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.62)', fontWeight: 600 }}>ESTIMATED PRICE</span>
               </div>
               <div style={{ fontSize: '0.85rem', color: 'white', fontWeight: 700 }}>{medicine.priceRange}</div>
             </div>
             <div style={{ padding: '0.9rem 1rem', borderRadius: 12, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
                 <Clock size={13} color="#4ade80" />
-                <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.45)', fontWeight: 600 }}>LAST UPDATE</span>
+                <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.62)', fontWeight: 600 }}>LAST UPDATE</span>
               </div>
               <div style={{ fontSize: '0.85rem', color: 'white', fontWeight: 700 }}>{medicine.lastUpdate}</div>
             </div>
@@ -113,7 +113,7 @@ export default function MedicineDetailPanel({ medicine, onClose }) {
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, width: '100%',
               padding: '0.85rem', borderRadius: '99px', border: '1px solid rgba(255,255,255,0.15)', cursor: 'not-allowed',
               background: 'rgba(255,255,255,0.05)',
-              color: 'rgba(255,255,255,0.45)', fontFamily: 'Sora', fontWeight: 700, fontSize: '0.9rem',
+              color: 'rgba(255,255,255,0.62)', fontFamily: 'Sora', fontWeight: 700, fontSize: '0.9rem',
             }}
           >
             Reserve This Medicine — Coming Soon

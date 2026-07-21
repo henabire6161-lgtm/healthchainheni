@@ -82,7 +82,7 @@ export default function MedicineSearch({ selectedId, onSelect }) {
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontFamily: 'Sora', fontWeight: 700, fontSize: '0.85rem', color: 'white' }}>{m.name}</div>
-                  <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)' }}>{m.category}</div>
+                  <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)' }}>{m.category}</div>
                 </div>
                 <span style={{ fontSize: '0.72rem', fontWeight: 700, color: meta.color, whiteSpace: 'nowrap' }}>{meta.label}</span>
               </motion.button>
@@ -91,7 +91,7 @@ export default function MedicineSearch({ selectedId, onSelect }) {
           {results.length === 0 && (
             <motion.p
               initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-              style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', padding: '0.75rem 0' }}
+              style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.62)', padding: '0.75rem 0' }}
             >
               No medicines found for "{query}".
             </motion.p>

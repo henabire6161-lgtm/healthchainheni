@@ -2,21 +2,10 @@ import { useState, lazy, Suspense } from 'react'
 import SectionHeader from './SectionHeader'
 import MedicineSearch from './MedicineSearch'
 import MedicineDetailPanel from './MedicineDetailPanel'
+import Skeleton from './Skeleton'
 import { MEDICINES } from '../data/medicines'
 
 const EthiopiaMap = lazy(() => import('./EthiopiaMap'))
-
-function MapFallback() {
-  return (
-    <div style={{
-      width: '100%', maxWidth: 460, aspectRatio: '1 / 1', margin: '0 auto',
-      borderRadius: 24, background: 'rgba(255,255,255,0.03)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-    }}>
-      <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)' }}>Loading map…</span>
-    </div>
-  )
-}
 
 export default function NPIPSection() {
   const [activeMedicine, setActiveMedicine] = useState(MEDICINES[0])
@@ -43,10 +32,10 @@ export default function NPIPSection() {
             <MedicineSearch selectedId={activeMedicine.id} onSelect={handleSelect} />
           </div>
           <div>
-            <Suspense fallback={<MapFallback />}>
+            <Suspense fallback={<Skeleton height={460} borderRadius={24} label="Loading map" />}>
               <EthiopiaMap medicine={activeMedicine} />
             </Suspense>
-            <p style={{ textAlign: 'center', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>
+            <p style={{ textAlign: 'center', fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)', marginTop: '1rem' }}>
               Showing live stock for <strong style={{ color: '#4ade80' }}>{activeMedicine.name}</strong> · demo data
             </p>
           </div>

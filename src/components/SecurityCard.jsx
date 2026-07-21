@@ -37,7 +37,7 @@ export default function SecurityCard({ item, delay = 0 }) {
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontFamily: 'Sora', fontWeight: 700, fontSize: '0.88rem', color: 'white' }}>{item.title}</div>
-          <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>{item.shortDesc}</div>
+          <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.62)', marginTop: 2 }}>{item.shortDesc}</div>
         </div>
         <motion.div animate={{ rotate: expanded ? 180 : 0 }} transition={{ duration: 0.25 }} style={{ flexShrink: 0 }}>
           <ChevronDown size={18} color="rgba(255,255,255,0.5)" />

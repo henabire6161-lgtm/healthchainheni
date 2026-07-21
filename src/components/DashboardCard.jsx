@@ -38,7 +38,7 @@ export default function DashboardCard({ icon: Icon, label, value, decimals = 0, 
         <div style={{ fontFamily: 'Sora', fontWeight: 800, fontSize: '1.55rem', color: 'white', lineHeight: 1 }}>
           <AnimatedCounter value={value} decimals={decimals} suffix={suffix} />
         </div>
-        {sub && <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.35rem' }}>{sub}</div>}
+        {sub && <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.62)', marginTop: '0.35rem' }}>{sub}</div>}
         {trend != null && <div style={{ marginTop: '0.35rem' }}><TrendIndicator value={trend} /></div>}
       </div>
     </motion.div>

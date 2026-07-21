@@ -32,7 +32,7 @@ export default function EcosystemSection({ onExploreFull }) {
               <div style={{ fontFamily: 'Sora', fontWeight: 800, fontSize: '2rem', color: '#4ade80' }}>
                 <AnimatedCounter value={s.value} suffix={s.suffix} />
               </div>
-              <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', fontWeight: 500, letterSpacing: '0.03em' }}>{s.label}</div>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)', fontWeight: 500, letterSpacing: '0.03em' }}>{s.label}</div>
             </div>
           ))}
         </div>

@@ -58,7 +58,20 @@ export default function LandingPage({ go }) {
 
   return (
     <div style={{ minHeight:'100vh', background:'white' }}>
+      <a
+        href="#main-content"
+        style={{
+          position:'absolute', left:'-9999px', top:0, zIndex:1000,
+          background:'#052e16', color:'white', padding:'0.75rem 1.25rem', borderRadius:8,
+          fontFamily:'Sora', fontWeight:700, fontSize:'0.85rem',
+        }}
+        onFocus={e => { e.currentTarget.style.left = '1rem'; e.currentTarget.style.top = '1rem' }}
+        onBlur={e => { e.currentTarget.style.left = '-9999px' }}
+      >
+        Skip to main content
+      </a>
       <Navbar onRequestDemo={scrollToContact} />
+      <main id="main-content">
       <Hero onExplore={scrollToPlatform} onRequestDemo={scrollToContact} />
       <ChallengeSection />
       <EcosystemSection onExploreFull={scrollToExplorer} />
@@ -144,7 +157,7 @@ export default function LandingPage({ go }) {
               }}>
                 <div style={{ width:34, height:34, borderRadius:9, background:'#0a6640', display:'flex', alignItems:'center', justifyContent:'center', fontFamily:'Sora', fontWeight:800, fontSize:'0.8rem', color:'white', marginBottom:'1.125rem' }}>{s.n}</div>
                 <h4 style={{ fontFamily:'Sora', fontWeight:700, fontSize:'0.95rem', color:'white', marginBottom:'0.5rem' }}>{s.t}</h4>
-                <p style={{ fontSize:'0.83rem', color:'rgba(255,255,255,0.42)', lineHeight:1.65 }}>{s.d}</p>
+                <p style={{ fontSize:'0.83rem', color:'rgba(255,255,255,0.62)', lineHeight:1.65 }}>{s.d}</p>
               </div>
             ))}
           </div>
@@ -220,6 +233,7 @@ export default function LandingPage({ go }) {
       <RoadmapSection />
       <PartnershipSection />
       <FinalCTASection onRequestDemo={scrollToContact} onExploreVision={scrollToArchitecture} />
+      </main>
       <Footer />
     </div>
   )

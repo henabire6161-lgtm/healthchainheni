@@ -36,7 +36,7 @@ export default function PlatformGrid({ platforms, onSelect }) {
       }}>
         <FloatingNode icon={Network} label="HealthChain" size={124} iconSize={34} />
         <span style={{
-          fontSize: '0.68rem', color: 'rgba(255,255,255,0.4)', fontWeight: 500,
+          fontSize: '0.68rem', color: 'rgba(255,255,255,0.6)', fontWeight: 500,
           maxWidth: 160, textAlign: 'center', lineHeight: 1.4,
         }}>
           {HUB.subtitle}

@@ -49,7 +49,7 @@ export default function JourneyStep({ step, index, onSelect, compact = false }) 
         }}>
           {title}
         </div>
-        <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
+        <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.5 }}>
           {shortDesc}
         </div>
       </div>

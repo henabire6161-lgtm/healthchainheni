@@ -18,7 +18,7 @@ export default function TechBadge({ icon: Icon, label, sublabel, delay = 0 }) {
         {Icon && <Icon size={14} color="#4ade80" />}
         <span style={{ fontFamily: 'Sora', fontWeight: 700, fontSize: '0.8rem', color: 'white' }}>{label}</span>
       </span>
-      {sublabel && <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.45)' }}>{sublabel}</span>}
+      {sublabel && <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.62)' }}>{sublabel}</span>}
     </motion.div>
   )
 }

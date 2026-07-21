@@ -25,7 +25,7 @@ export default function ProgressRing({ value, size = 120, strokeWidth = 10, colo
       }}>
         <span style={{ fontFamily: 'Sora', fontWeight: 800, fontSize: size / 4.5, color: 'white' }}>{value}%</span>
         {label && (
-          <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.45)', textAlign: 'center', maxWidth: size * 0.72, lineHeight: 1.3 }}>
+          <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.62)', textAlign: 'center', maxWidth: size * 0.72, lineHeight: 1.3 }}>
             {label}
           </span>
         )}
