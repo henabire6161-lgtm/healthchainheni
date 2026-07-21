@@ -6,6 +6,11 @@ import Hero from '../components/Hero'
 import ChallengeSection from '../components/ChallengeSection'
 import EcosystemSection from '../components/EcosystemSection'
 import PlatformExplorer from '../components/PlatformExplorer'
+import CitizenJourney from '../components/CitizenJourney'
+import NPIPSection from '../components/NPIPSection'
+import MOHDashboardSection from '../components/MOHDashboardSection'
+import ActivityFeedSection from '../components/ActivityFeedSection'
+import TrustWorkflow from '../components/TrustWorkflow'
 import { PLATFORMS } from '../data/platforms'
 
 const ROLES = [
@@ -48,6 +53,11 @@ export default function LandingPage({ go }) {
       <ChallengeSection />
       <EcosystemSection onExploreFull={scrollToExplorer} />
       <PlatformExplorer selectedId={explorerPlatformId} onSelectId={setExplorerPlatformId} />
+      <CitizenJourney />
+      <NPIPSection />
+      <MOHDashboardSection />
+      <ActivityFeedSection />
+      <TrustWorkflow />
 
       {/* ── PORTALS ── */}
       <section id="who-its-for" className="portals" style={{ padding:'6rem 2rem', background:'#f8fafc' }}>

@@ -1,0 +1,65 @@
+import { useState, lazy, Suspense } from 'react'
+import SectionHeader from './SectionHeader'
+import MedicineSearch from './MedicineSearch'
+import MedicineDetailPanel from './MedicineDetailPanel'
+import { MEDICINES } from '../data/medicines'
+
+const EthiopiaMap = lazy(() => import('./EthiopiaMap'))
+
+function MapFallback() {
+  return (
+    <div style={{
+      width: '100%', maxWidth: 460, aspectRatio: '1 / 1', margin: '0 auto',
+      borderRadius: 24, background: 'rgba(255,255,255,0.03)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)' }}>Loading map…</span>
+    </div>
+  )
+}
+
+export default function NPIPSection() {
+  const [activeMedicine, setActiveMedicine] = useState(MEDICINES[0])
+  const [detailMedicine, setDetailMedicine] = useState(null)
+
+  const handleSelect = (medicine) => {
+    setActiveMedicine(medicine)
+    setDetailMedicine(medicine)
+  }
+
+  return (
+    <section id="npip" style={{ padding: '7rem 1.5rem 6rem', background: 'linear-gradient(180deg,#052e16,#0a3d24)', position: 'relative' }}>
+      <div style={{ maxWidth: 1140, margin: '0 auto' }}>
+        <SectionHeader
+          eyebrow="NATIONAL PHARMACEUTICAL INTELLIGENCE PLATFORM"
+          title="Real-time medicine intelligence, nationwide."
+          subtitle="Real-time nationwide medicine intelligence connecting patients, pharmacies, healthcare providers, regulators, and government."
+          dark
+          maxWidth={640}
+        />
+
+        <div className="npip-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+          <div>
+            <MedicineSearch selectedId={activeMedicine.id} onSelect={handleSelect} />
+          </div>
+          <div>
+            <Suspense fallback={<MapFallback />}>
+              <EthiopiaMap medicine={activeMedicine} />
+            </Suspense>
+            <p style={{ textAlign: 'center', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', marginTop: '1rem' }}>
+              Showing live stock for <strong style={{ color: '#4ade80' }}>{activeMedicine.name}</strong> · demo data
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <MedicineDetailPanel medicine={detailMedicine} onClose={() => setDetailMedicine(null)} />
+
+      <style>{`
+        @media (max-width: 900px) {
+          .npip-layout { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+        }
+      `}</style>
+    </section>
+  )
+}
