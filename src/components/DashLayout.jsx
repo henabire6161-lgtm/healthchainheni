@@ -1,9 +1,11 @@
 import Sidebar from './Sidebar'
+import DashboardAssistant from './DashboardAssistant'
 
 export default function DashLayout({ items, active, setActive, role, go, topbar, children }) {
   return (
     <div style={{display:'flex',minHeight:'100vh',background:'var(--surface)'}}>
       <Sidebar items={items} active={active} setActive={setActive} role={role} go={go}/>
+      <DashboardAssistant role={role}/>
       <div style={{marginLeft:'var(--sidebar-w)',flex:1,display:'flex',flexDirection:'column',minHeight:'100vh'}}>
         {/* Topbar */}
         <header style={{
@@ -24,7 +26,7 @@ export default function DashLayout({ items, active, setActive, role, go, topbar,
               display:'flex',alignItems:'center',justifyContent:'center',
               color:'white',fontSize:'0.8rem',fontWeight:700,cursor:'pointer'
             }}>
-              {role==='patient'?'FI':role==='doctor'?'DR':role==='hospital'?'HA':'MH'}
+              {role==='patient'?'HK':role==='doctor'?'DR':role==='hospital'?'HA':'MH'}
             </div>
           </div>
         </header>

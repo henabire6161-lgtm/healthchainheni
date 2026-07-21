@@ -3,6 +3,7 @@ import { Shield, Activity, Users, Lock, ChevronRight, CheckCircle,
          Globe, Database, Zap, Fingerprint, HeartPulse } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import AIAssistantSection from '../components/AIAssistantSection'
 import ChallengeSection from '../components/ChallengeSection'
 import EcosystemSection from '../components/EcosystemSection'
 import PlatformExplorer from '../components/PlatformExplorer'
@@ -131,6 +132,9 @@ export default function LandingPage({ go }) {
           </div>
         </div>
       </section>
+
+      {/* ── AI ASSISTANT ── */}
+      <AIAssistantSection />
 
       {/* ── HOW IT WORKS ── */}
       <section id="how-it-works" className="how-it-works" style={{ padding:'6rem 2rem', background:'#052e16', position:'relative', overflow:'hidden' }}>
