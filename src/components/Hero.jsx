@@ -86,7 +86,7 @@ export default function Hero({ onExplore, onRequestDemo }) {
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)',
-            borderRadius: '99px', padding: '0.35rem 1rem', marginBottom: '2rem',
+            borderRadius: '99px', padding: '0.35rem 1rem', marginBottom: '0.75rem',
           }}
         >
           <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#4ade80', animation: 'pulse 2s infinite' }} />
@@ -94,6 +94,15 @@ export default function Hero({ onExplore, onRequestDemo }) {
             SUPPORTING DIGITAL ETHIOPIA 2030
           </span>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)', letterSpacing: '0.03em', marginBottom: '2rem' }}
+        >
+          Interactive Vision Prototype · Demonstration Data
+        </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
@@ -170,10 +179,14 @@ export default function Hero({ onExplore, onRequestDemo }) {
           ].map((s, i) => (
             <div key={i} style={{ padding: '1.5rem 1rem', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}>
               <div style={{ fontFamily: 'Sora', fontWeight: 800, fontSize: '1.9rem', color: '#4ade80', lineHeight: 1 }}>{s.value}</div>
-              <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', marginTop: 4, fontWeight: 500 }}>{s.label}</div>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)', marginTop: 4, fontWeight: 500 }}>{s.label}</div>
             </div>
           ))}
         </motion.div>
+
+        <p style={{ fontSize: '0.66rem', color: 'rgba(255,255,255,0.55)', marginTop: '0.75rem' }}>
+          Illustrative national-scale figures for this vision prototype, not live platform metrics.
+        </p>
       </div>
 
       <style>{`

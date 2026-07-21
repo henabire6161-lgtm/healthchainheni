@@ -5,6 +5,7 @@ import DashboardGrid from './DashboardGrid'
 import DashboardCard from './DashboardCard'
 import ChartCard from './ChartCard'
 import ProgressRing from './ProgressRing'
+import Skeleton from './Skeleton'
 import {
   KPI_STATS, PRESCRIPTIONS_TREND, CLAIMS_STATUS, REGIONAL_COMPARISON,
   VACCINATION_COVERAGE, HOSPITAL_CAPACITY, DISEASE_ALERTS,
@@ -12,20 +13,9 @@ import {
 
 const DashboardCharts = lazy(() => import('./DashboardCharts'))
 
-const axisTick = { fontSize: 11, fill: 'rgba(255,255,255,0.45)' }
+const axisTick = { fontSize: 11, fill: 'rgba(255,255,255,0.62)' }
 const gridStroke = 'rgba(255,255,255,0.08)'
 const tooltipStyle = { background: '#0a3d24', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, fontSize: 12, color: 'white' }
-
-function ChartFallback({ height = 220 }) {
-  return (
-    <div style={{
-      height, borderRadius: 12, background: 'rgba(255,255,255,0.04)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-    }}>
-      <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)' }}>Loading chart…</span>
-    </div>
-  )
-}
 
 export default function MOHDashboardSection() {
   return (
@@ -46,9 +36,12 @@ export default function MOHDashboardSection() {
               <DashboardCard key={s.id} icon={s.icon} label={s.label} value={s.value} decimals={s.decimals} suffix={s.suffix} sub={s.sub} trend={s.trend} delay={i * 0.04} />
             ))}
           </DashboardGrid>
+          <p style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.62)', marginTop: '0.75rem', textAlign: 'center' }}>
+            Demonstration data for this vision prototype — not a live feed.
+          </p>
         </div>
 
-        <Suspense fallback={<ChartFallback height={520} />}>
+        <Suspense fallback={<Skeleton height={520} label="Loading dashboard charts" />}>
           <DashboardCharts
             axisTick={axisTick}
             gridStroke={gridStroke}
@@ -78,7 +71,7 @@ export default function MOHDashboardSection() {
                   <AlertTriangle size={18} color={a.severity === 'red' ? '#f87171' : '#fbbf24'} style={{ flexShrink: 0 }} />
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontFamily: 'Sora', fontWeight: 700, fontSize: '0.85rem', color: 'white' }}>{a.disease} — {a.region}</div>
-                    <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>{a.cases} cases</div>
+                    <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)', marginTop: 2 }}>{a.cases} cases</div>
                   </div>
                   <div style={{ fontFamily: 'Sora', fontWeight: 800, fontSize: '0.9rem', color: a.severity === 'red' ? '#f87171' : '#fbbf24', flexShrink: 0 }}>
                     {a.trend}

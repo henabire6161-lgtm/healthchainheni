@@ -19,7 +19,7 @@ export default function ChartCard({ title, subtitle, action, children, delay = 0
         }}>
           <div>
             {title && <h4 style={{ fontFamily: 'Sora', fontWeight: 700, fontSize: '0.95rem', color: 'white' }}>{title}</h4>}
-            {subtitle && <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>{subtitle}</p>}
+            {subtitle && <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.62)', marginTop: 2 }}>{subtitle}</p>}
           </div>
           {action}
         </div>

@@ -47,7 +47,7 @@ function ChallengeCard({ card, scrollYProgress }) {
         </motion.div>
       </div>
       <div style={{ fontFamily: 'Sora', fontWeight: 700, fontSize: '0.85rem', color: 'white', marginBottom: 4 }}>{label}</div>
-      <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>{desc}</div>
+      <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.5 }}>{desc}</div>
     </motion.div>
   )
 }
@@ -141,7 +141,7 @@ function MobileStack() {
               <Icon size={18} color="#fca5a5" />
               <div>
                 <div style={{ fontFamily: 'Sora', fontWeight: 700, fontSize: '0.85rem', color: 'white' }}>{card.label}</div>
-                <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)' }}>{card.desc}</div>
+                <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.62)' }}>{card.desc}</div>
               </div>
             </motion.div>
           )

@@ -22,16 +22,16 @@ export default function Footer() {
               </div>
               <span style={{ fontFamily: 'Sora', fontWeight: 800, fontSize: '0.95rem', color: '#4ade80' }}>HealthChainET</span>
             </div>
-            <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.3)', maxWidth: 280, lineHeight: 1.65 }}>
+            <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', maxWidth: 280, lineHeight: 1.65 }}>
               A vision prototype for Ethiopia's future National Digital Health Infrastructure. Built to demonstrate,
               not yet in production.
             </p>
           </div>
 
           <nav aria-label="Footer navigation" style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-            <h5 style={{ fontFamily: 'Sora', fontSize: '0.7rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.07em', marginBottom: '0.25rem' }}>
+            <h4 style={{ fontFamily: 'Sora', fontSize: '0.7rem', fontWeight: 700, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.07em', marginBottom: '0.25rem' }}>
               PLATFORM
-            </h5>
+            </h4>
             {LINKS.map(l => (
               <button
                 key={l.id}
@@ -49,9 +49,9 @@ export default function Footer() {
           </nav>
 
           <div>
-            <h5 style={{ fontFamily: 'Sora', fontSize: '0.7rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.07em', marginBottom: '0.75rem' }}>
+            <h4 style={{ fontFamily: 'Sora', fontSize: '0.7rem', fontWeight: 700, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.07em', marginBottom: '0.75rem' }}>
               CONNECT
-            </h5>
+            </h4>
             <div style={{ display: 'flex', gap: '0.6rem' }}>
               <a
                 href="https://github.com/henabire6161-lgtm/healthchainheni"

@@ -15,7 +15,7 @@ export default function MedicineAvailabilityCard({ cityName, status, units, comp
       <div style={{ textAlign: 'right' }}>
         <div style={{ fontSize: compact ? '0.7rem' : '0.75rem', fontWeight: 700, color: meta.color }}>{meta.label}</div>
         {units != null && (
-          <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.4)' }}>{units.toLocaleString()} units</div>
+          <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.62)' }}>{units.toLocaleString()} units</div>
         )}
       </div>
     </div>
